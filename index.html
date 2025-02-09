@@ -28,12 +28,12 @@
         .logo {
             position: absolute;
             left: 10px;
-            width: 180px;
+            width: 140px;
             height: auto;
         }
         .title {
             font-family: 'Playfair Display', serif;
-            font-size: 32px;
+            font-size: 28px;
             font-weight: bold;
             color: #FFD700;
             text-transform: uppercase;
@@ -65,15 +65,18 @@
             border-radius: 8px;
             border: 2px solid #800060;
             transition: all 0.3s;
+            cursor: pointer;
         }
         .link-box img {
             width: 25px;
             height: 25px;
+            alt: "Portal Icon";
         }
         .link-box:hover {
             background: linear-gradient(to right, #800060, #4B0082);
             color: white;
             transform: scale(1.05);
+            box-shadow: 0 8px 15px rgba(128, 0, 96, 0.3);
         }
         .footer {
             text-align: center;
@@ -84,13 +87,15 @@
             background: #4B0082;
             width: 100%;
             margin-top: auto;
+            position: sticky;
+            bottom: 0;
         }
         @media (max-width: 600px) {
             .logo {
-                width: 140px;
+                width: 100px;
             }
             .title {
-                font-size: 24px;
+                font-size: 22px;
             }
             .container {
                 grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
@@ -113,15 +118,15 @@
     </div>
 
     <div class="container" id="linkContainer">
-        <a class="link-box" href="#" target="_blank"><img src="iavl.png" alt="I"> Official Site</a>
-        <a class="link-box" href="#" target="_blank"><img src="ramcoes.png" alt="R"> Ramcoes</a>
-        <a class="link-box" href="#" target="_blank"><img src="Leave.png" alt="LM"> Leave Management</a>
-        <a class="link-box" href="#" target="_blank"><img src="Benchmark.png" alt="BMD"> Benchmark Portal</a>
-        <a class="link-box" href="#" target="_blank"><img src="iavl.png" alt="TS"> TIAS</a>
-        <a class="link-box" href="#" target="_blank"><img src="EPathshala.png" alt="EP"> E-Pathshala</a>
-        <a class="link-box" href="#" target="_blank"><img src="Gatepass.png" alt="GP"> Gate Pass System</a>
-        <a class="link-box" href="#" target="_blank"><img src="mail.png" alt="Mail"> Mail</a>
-        <a class="link-box" href="#" target="_blank"><img src="SAP.png" alt="SAP"> SAP</a>
+        <a class="link-box" href="#" target="_blank"><img src="iavl.png" alt="Official Site Icon"> Official Site</a>
+        <a class="link-box" href="#" target="_blank"><img src="ramcoes.png" alt="Ramcoes Icon"> Ramcoes</a>
+        <a class="link-box" href="#" target="_blank"><img src="Leave.png" alt="Leave Management Icon"> Leave Management</a>
+        <a class="link-box" href="#" target="_blank"><img src="Benchmark.png" alt="Benchmark Portal Icon"> Benchmark Portal</a>
+        <a class="link-box" href="#" target="_blank"><img src="iavl.png" alt="TIAS Icon"> TIAS</a>
+        <a class="link-box" href="#" target="_blank"><img src="EPathshala.png" alt="E-Pathshala Icon"> E-Pathshala</a>
+        <a class="link-box" href="#" target="_blank"><img src="Gatepass.png" alt="Gate Pass Icon"> Gate Pass System</a>
+        <a class="link-box" href="#" target="_blank"><img src="mail.png" alt="Mail Icon"> Mail</a>
+        <a class="link-box" href="#" target="_blank"><img src="SAP.png" alt="SAP Icon"> SAP</a>
     </div>
 
     <div class="footer">IndianOil Adani Ventures Limited</div>
