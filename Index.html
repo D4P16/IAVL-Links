@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Portals</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background: linear-gradient(to left, #4B0082, #800060);
+            border-bottom: 5px solid #FFD700;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        .logo {
+            position: absolute;
+            left: 20px;
+            width: 220px;
+            height: auto;
+        }
+        .title {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            font-weight: bold;
+            color: #FFD700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .container {
+            width: 70%;
+            margin: 40px auto;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 30px rgba(128, 0, 96, 0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            text-align: center;
+            flex: 1;
+        }
+        .link-box {
+            padding: 15px;
+            background: #ffffff;
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            border-radius: 8px;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+            border: 2px solid #800060;
+            transition: all 0.3s ease-in-out;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .link-box img {
+            width: 30px;
+            height: 30px;
+        }
+        .link-box:hover {
+            background: linear-gradient(to right, #800060, #4B0082);
+            color: white;
+            transform: scale(1.05);
+            box-shadow: 0 8px 15px rgba(128, 0, 96, 0.3);
+        }
+        .footer {
+            text-align: center;
+            padding: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #FFD700;
+            background: #4B0082;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="IAVL logo.png" alt="Company Logo" class="logo">
+        <div class="title">Portals & Sites</div>
+    </div>
+
+    <div class="container" id="linkContainer">
+        <a class="link-box" href="https://IAVl.com" target="_blank"><img src="iavl.png" alt="I"> Official Site</a>
+        <a class="link-box" href="https://iavl.ramcoes.com/rvw/hub/index.html" target="_blank"><img src="ramcoes.png" alt="R"> Ramcoes</a>
+        <a class="link-box" href="https://103.232.25.153/COSEC/Login" target="_blank"><img src="leave.png" alt="LM"> Leave Management</a>
+        <a class="link-box" href="https://iavl.benchmarkdigital.com/home" target="_blank"><img src="benchmark.png" alt="BMD"> Benchmark Portal</a>
+        <a class="link-box" href="https://tias.iotl.com/web/dashboard/default" target="_blank"><img src="iavl.png" alt="TS"> TIAS</a>
+        <a class="link-box" href="https://epathshala.iavl.com/login/" target="_blank"><img src="EPathshala.png" alt="EP"> E-Pathshala</a>
+        <a class="link-box" href="https://agpweb.axiscrm.in/Home" target="_blank"><img src="gatepass.png" alt="GP"> Gate Pass System</a>
+        <a class="link-box" href="https://login.microsoftonline.com/" target="_blank"><img src="mail.png" alt="Mail"> Mail</a>
+        <a class="link-box" href="https://www.sap.com/india/partners/login.html" target="_blank"><img src="SAP.png" alt="SAP"> SAP</a>
+    </div>
+
+    <div class="footer">IndianOil Adani Ventures Limited</div>
+</body>
+</html>
