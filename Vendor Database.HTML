@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Vendor Database</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+}
+
+/* HEADER */
+.header {
+    height: 60px;
+    background: linear-gradient(to left, #4B0082, #800060);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: #FFD700;
+    font-size: 28px;
+    font-weight: bold;
+    font-family: 'Playfair Display', serif;
+    text-transform: uppercase;
+
+}
+
+.logo {
+    position: absolute;
+    left: 10px;
+    height: 50px;
+}
+
+.search-icon {
+    position: absolute;
+    right: 50px;
+    cursor: pointer;
+}
+
+#headerSearch {
+    position: absolute;
+    right: 85px;
+    display: none;
+    padding: 5px 10px;
+    border-radius: 20px;
+    border: 2px solid #FFD700;
+    outline: none;
+}
+
+.home-icon {
+    position: absolute;
+    right: 10px;
+    text-decoration: none;
+    color: #FFD700;
+}
+
+/* TABLE */
+table {
+    width: 95%;
+    margin: 15px auto;
+    border-collapse: collapse;
+    background: #fff;
+}
+
+th, td {
+    padding: 6px;
+    border: 1px solid #ccc;
+    font-size: 13px;
+}
+
+th {
+    background: #800060;
+    color: white;
+}
+
+tr:hover {
+    background: #f1f1f1;
+}
+
+/* LINKS */
+#vendorTable a {
+    color: #4B0082;
+    text-decoration: none;
+}
+#vendorTable a:hover {
+    text-decoration: underline;
+}
+
+/* TOAST */
+#copyToast {
+    visibility: hidden;
+    min-width: 80px;
+    background: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 6px 10px;
+    position: fixed;
+    z-index: 999;
+    bottom: 30px;
+    right: 30px;
+    font-size: 13px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+#copyToast.show {
+    visibility: visible;
+    opacity: 1;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="header">
+    <img src="IAVL logo.png" class="logo" alt="IAVL Logo">
+    Vendor Database
+    
+<span class="search-icon" id="searchIcon">🔍</span>
+    <input id="headerSearch" placeholder="Search vendor...">
+    <a href="index.html" class="home-icon">🏠</a>
+</div>
+
+<!-- TABLE -->
+<table id="vendorTable">
+<thead>
+<tr>
+     <th onclick="sortBy(0)" style="cursor:pointer;">Vendor Name ▲▼</th>
+    <th onclick="sortBy(1)" style="cursor:pointer;">Contact Person ▲▼</th>
+    <th>Contact No</th>
+    <th>Designation</th>
+    <th>Email</th>
+    <th>Specialized In</th>
+</tr>
+</thead>
+<tbody>
+
+<tr><td>AGG Logistic</td><td>Jitendra Raut</td><td>8108211178</td><td>Area Sales Manager</td><td>sales_mumbai@agglife.co.in</td><td>HSSE Materials (PPEs)</td></tr>
+
+<tr><td>Arvind Industrial Hygiene Consultancy</td><td>Dr. Avinash Kumar Verma</td><td>9109521211</td><td>Proprietor</td><td>arvind_indhyg2008@yahoo.com</td><td>Industrial Hygiene Survey</td></tr>
+
+<tr><td>Avish Tool Company</td><td>Amritesh</td><td>7021371699</td><td>Proprietor</td><td>amritesh@avish.co.in</td><td>HSSE Materials (PPEs)</td></tr>
+
+<tr><td>Bee Dee Enterprises</td><td>Priyabrata Routray</td><td>9109521211</td><td>Manager</td><td>bdenterprisers@gmail.com</td><td>Firefighting Equipment</td></tr>
+
+<tr><td>Beenafire Engineering Pvt. Ltd.</td><td>Operations Dept</td><td>9702276665</td><td>Operation Head</td><td>beenafirese@gmail.com</td><td>AMC – Firefighting Equipment</td></tr>
+
+<tr><td>Central Labour Institute</td><td>Narayan R</td><td>9581529442</td><td>Assistant Director</td><td>narayanan.10@dgfasli.nic.in</td><td>Training Services</td></tr>
+
+<tr><td>Central Labour Institute</td><td>Shailesh Borkar</td><td>9323433691</td><td>Director – STP</td><td>snb@dgfasli.nic.in</td><td>Training Services</td></tr>
+
+<tr><td>Chola MS</td><td>Raja Dandamusi</td><td>9898849696</td><td>Process Safety Eng.</td><td>rajadandamudi@cholams.murugappa.com</td><td>Training Services</td></tr>
+
+<tr><td>Chola MS</td><td>Swati Shetty</td><td>9920627622</td><td>Manager – BD</td><td>swaticshetty@cholams.murugappa.com</td><td>Training Services</td></tr>
+
+<tr><td>DNV Business Assurance India Pvt. Ltd.</td><td>Nitin Thorat</td><td>9937853914</td><td>—</td><td>nitin.thorat@dnv.com</td><td>Safety Audits, ISO</td></tr>
+
+<tr><td>E Square</td><td>Neha Sharma</td><td>9971221155</td><td>Relationship Manager</td><td>lockout@safetylock.net</td><td>LOTO</td></tr>
+
+<tr><td>Elmack Engg Services Pvt. Ltd.</td><td>Kunal Sawant</td><td>7400484569</td><td>—</td><td>kunal.sawant@elmackengg.com</td><td>LEL Meter Calibration</td></tr>
+
+<tr><td>G.R. Sales</td><td>Rajbir Singh</td><td>8433598495</td><td>—</td><td>libertyshoes@grsales.co.in</td><td>HSSE Materials (PPEs)</td></tr>
+
+<tr><td>Hindustan Simulators</td><td>Ashish Singh Tanwar</td><td>9890309003</td><td>—</td><td>ashishstanwar09@gmail.com</td><td>Defensive Driving Training</td></tr>
+
+<tr><td>Joseph Leslie Dynamiks Mfg. Pvt. Ltd.</td><td>Dhananjay More</td><td>8108447698</td><td>Field Officer</td><td>—</td><td>SCBA AMC</td></tr>
+
+<tr><td>Joseph Leslie Dynamiks Mfg. Pvt. Ltd.</td><td>Prajkta Chikhalkar</td><td>7620044451</td><td>Sr. Service Coordinator</td><td>ptservice.coordinator@jldmail.com</td><td>—</td></tr>
+
+<tr><td>Konkan Technical</td><td>Prathamesh</td><td>9082043637</td><td>Sales Officer</td><td>—</td><td>Oil Spill Kit</td></tr>
+
+<tr><td>Lindstrom Services India Pvt. Ltd.</td><td>Yashita Sawant</td><td>7620044451</td><td>—</td><td>yashita.sawant@lindstromgroup.com</td><td>—</td></tr>
+
+<tr><td>Manjushree Caterers</td><td>Manohar Rai</td><td>9869363504</td><td>—</td><td>manjushreeservice@gmail.com</td><td>Food Service</td></tr>
+
+<tr><td>Manjushree Caterers</td><td>Praveen Rai</td><td>9892625186</td><td>—</td><td>—</td><td>—</td></tr>
+
+<tr><td>Neo Enterprises</td><td>Asheesh</td><td>9822776101</td><td>Document Officer</td><td>—</td><td>—</td></tr>
+
+<tr><td>Neo Enterprises</td><td>Rahul Kamble</td><td>8850626609</td><td>AMC Coordinator</td><td>—</td><td>—</td></tr>
+
+<tr><td>Neo Enterprises</td><td>Shailesh</td><td>9819169101</td><td>Proprietor</td><td>scneoent@gmail.com</td><td>AMC – Firefighting</td></tr>
+
+<tr><td>Om Gagangiri</td><td>Dr. Prakash Shendge</td><td>9833571020</td><td>Proprietor</td><td>dr.prakashshendge@gmail.com</td><td>Health Check-up Service</td></tr>
+
+<tr><td>Om Gagangiri</td><td>Pratibha Sanugale</td><td>8425861031</td><td>Accounts Assistant</td><td>pratibhaogh@gmail.com</td><td>—</td></tr>
+
+<tr><td>Padmja Aerobiologicals Pvt. Ltd.</td><td>Mahesh S. Palande</td><td>9082616258</td><td>LDAR</td><td>—</td><td>LDAR Services</td></tr>
+
+<tr><td>Padmja Aerobiologicals Pvt. Ltd.</td><td>Ramdas Chaudhary</td><td>9921076105</td><td>Manager</td><td>papiturbhe@yahoo.co.in</td><td>Environmental Monitoring</td></tr>
+
+<tr><td>Padmja Aerobiologicals Pvt. Ltd.</td><td>Sandip H. Mumbaikar</td><td>9819365239</td><td>Field Officer</td><td>—</td><td>—</td></tr>
+
+<tr><td>Padmja Aerobiologicals Pvt. Ltd.</td><td>Vishwanath Nayak</td><td>9819365090</td><td>Finance Dept</td><td>—</td><td>—</td></tr>
+
+<tr><td>Rajmudra Travels</td><td>Tushar Bhisle</td><td>7277773424</td><td>Proprietor</td><td>rajmudra.t.t@gmail.com</td><td>Travel Services</td></tr>
+
+<tr><td>RB Thakur</td><td>Ravikant Thakur</td><td>9833783516</td><td>Proprietor</td><td>—</td><td>Painting Services</td></tr>
+<tr><td>Red Cross</td><td>Dr. Shruti Arabatti</td><td>9769124005</td><td>Doctor</td><td>drshru@afai.co.in</td><td>First Aid Training</td></tr>
+<tr><td>Red Cross</td><td>Prashan Bhosle</td><td>9833989799</td><td>Accountant</td><td>prashant13ircs@gmail.com</td><td>—</td></tr>
+<tr><td>S. A. Consultant</td><td>N. S. Usmani</td><td>9960416657</td><td>Manager</td><td>info@saconsultant.co.in</td><td>Safety Audits & Reports</td></tr>
+<tr><td>S K Safety Services</td><td>Satish Sarpate</td><td>9920053204</td><td>Proprietor</td><td>info@sksafetyservices.in</td><td>LEL Meter Calibration</td></tr>
+<tr><td>S.S. Enterprises</td><td>Shradhanand Shukla</td><td>9028378140</td><td>Proprietor</td><td>ssent121@gmail.com</td><td>HSSE Materials (PPEs)</td></tr>
+<tr><td>Scrum Systems Pvt. Ltd.</td><td>Monika Sable</td><td>9028378140</td><td>AMC Coordinator</td><td>monikas@scrum-system.com</td><td>Safety Training Kiosk</td></tr>
+<tr><td>Siddhartha Enterprises</td><td>Sulochana Nitin Bhoj</td><td>9892233574</td><td>Coordinator</td><td>siddharth@swrap.in</td><td>Oil Dispersant</td></tr>
+<tr><td>Training Ship Rahaman</td><td>Bhalchandra Gavandi</td><td>8879967734</td><td>Reception In-charge</td><td>b.gavandi@tsrahaman.org</td><td>Live Fire Fighting</td></tr>
+<tr><td>Training Ship Rahaman</td><td>V. A. Kamath</td><td>9819064600</td><td>Head – Mgmt Systems</td><td>v.kamath@tsrahaman.org</td><td>Live Fire Fighting</td></tr>
+<tr><td>Udyogi Plastics Pvt. Ltd.</td><td>Arvind Mishra</td><td>9324141388</td><td>—</td><td>arvind@udyogi.net</td><td>PPE Supplier</td></tr>
+<tr><td>Unicorn Enterprises</td><td>Dr. Milind Kadrekar</td><td>9004464471</td><td>Doctor</td><td>advenue2001@gmail.com</td><td>OHC</td></tr>
+<tr><td>Vaishnavi Screen & Offset</td><td>Girish Jage</td><td>9769699344</td><td>—</td><td>girish.jage@yahoo.in</td><td>Banner / Poster</td></tr>
+</tbody>
+</table>
+
+<div id="copyToast">Copied</div>
+
+<script>
+const searchIcon = document.getElementById("searchIcon");
+const searchBox  = document.getElementById("headerSearch");
+const table      = document.getElementById("vendorTable");
+const toast      = document.getElementById("copyToast");
+
+/* Search toggle */
+searchIcon.onclick = () => {
+    searchBox.style.display =
+        searchBox.style.display === "block" ? "none" : "block";
+    searchBox.focus();
+};
+
+/* Search filter */
+searchBox.oninput = () => {
+    const filter = searchBox.value.toLowerCase();
+    for (let row of table.tBodies[0].rows) {
+        row.style.display = row.innerText.toLowerCase().includes(filter) ? "" : "none";
+    }
+};
+
+/* Convert phone & email to links */
+document.querySelectorAll("#vendorTable td").forEach(td => {
+    const text = td.innerText.trim();
+
+    if (text.includes("@") && !text.includes(" ")) {
+        td.innerHTML = `<a href="mailto:${text}" data-copy="${text}">${text}</a>`;
+    }
+else if (/^\d{10}$/.test(text)) {
+    td.innerHTML = `<a href="tel:+91${text}" data-copy="${text}">${text}</a>`;
+}
+});
+
+/* Copy on click (no button) */
+document.addEventListener("click", e => {
+    const el = e.target;
+    if (el.tagName === "A" && el.dataset.copy) {
+        navigator.clipboard.writeText(el.dataset.copy);
+        toast.classList.add("show");
+        setTimeout(() => toast.classList.remove("show"), 1200);
+    }
+});
+</script>
+<script>
+let sortState = {}; // remembers sort direction per column
+
+function sortBy(colIndex) {
+  const table = document.getElementById("vendorTable");
+  const tbody = table.tBodies[0];
+  const rows = Array.from(tbody.rows);
+
+  // toggle direction per column
+  sortState[colIndex] = !sortState[colIndex];
+  const asc = sortState[colIndex];
+
+  rows.sort((a, b) => {
+    const t1 = a.cells[colIndex].innerText.trim().toLowerCase();
+    const t2 = b.cells[colIndex].innerText.trim().toLowerCase();
+    return asc ? t1.localeCompare(t2) : t2.localeCompare(t1);
+  });
+
+  rows.forEach(row => tbody.appendChild(row));
+}
+</script>
+
+</body>
+</html>
